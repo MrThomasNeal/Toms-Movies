@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css"> 
+<script>
+  function validate() {
+    if(document.searchMovie.movietitle.value == "") {
+      window.alert("Movie Title: Empty Input");
+      return false;
+    }
+
+    if(((document.searchMovie.movietitle.value).length) < 3) {
+      window.alert("Movie Title: Too Short");
+      return false;
+    }
+    var characters = /^[a-zA-Z\s]*$/;
+    if (!document.searchMovie.movietitle.value.match(characters)) {
+      window.alert("Movie title must contain alphabet characters only");
+      return false;
+    }
+    
+  } 
+</script>
+<head>
+<body>
+<div id="title">
+<pre style="color:#ff0000" ><strong><h3><br><br><br><br><br><br>  ______               _          __  ___           _          
+ /_  __/___  ____ ___ ( )_____   /  |/  /___ _   __(_)__  _____
+  / / / __ \/ __ `__ \|// ___/  / /|_/ / __ \ | / / / _ \/ ___/
+ / / / /_/ / / / / / / (__  )  / /  / / /_/ / |/ / /  __(__  ) 
+/_/  \____/_/ /_/ /_/ /____/  /_/  /_/\____/|___/_/\___/____/  
+                                                               </h3></strong></pre>
+    </div>
+    <div id="buttons">
+        <button onclick="window.location.href='index.html'"; type="button" class="button" style="margin:3px" style="width:30px">
+         Home</button>
+        <button onclick="history.back()"; type="button" class="button" style="margin:3px" style="width:30px">
+         Back</button>
+    </div>
+    <div id="welcomemessage">
+    <pre style="color:#ff0000"><font face = ""><strong><h4>-=- Search for Movie -=- </h4></strong></font></pre>
+    </div>
+    <div id="form">
+    <FORM name="searchMovie" action="searchmovie.php" method="post" onsubmit="return validate()">
+                                                                        
+      <label for="movietitle">Movie Title</label>
+      <input type="text" id="movietitle" name="movietitle" placeholder="">
+
+      <input type="submit" value="Submit">
+      </FORM>
+      </div>
+                                                                                     
+
+</body>
+</html>

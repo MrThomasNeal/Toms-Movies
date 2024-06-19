@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css"> 
+<script>
+  function validate() {
+    var characters = /^[a-zA-Z\s]*$/;
+
+    if (document.newMovie.newmoviename.value == "") {
+      window.alert("Movie Name: Empty Input");
+      return false;
+    }
+
+    if(((document.newMovie.newmoviename.value).length) < 3 ) {
+      window.alert("Movie Name: Too Short");
+      return false;
+    }
+    var numbers = /^[0-9]+$/;
+    if(!document.newMovie.newyear.value == "") {
+    if (!document.newMovie.newyear.value.match(numbers)) {
+      window.alert("Year of release must be numeric");
+      return false;
+      }
+    }
+
+    if(document.newMovie.newactorname.value == "") {
+      window.alert("Actor ID: Empty Input");
+      return false;
+    }
+
+    var characters = /^[a-zA-Z\s]*$/;
+    if (!document.newMovie.newactorname.value.match(characters)) {
+      window.alert("Actor name must contain alphabet characters only");
+      return false;
+    }
+
+    if(((document.newMovie.newactorname.value).length) < 3 ) {
+      window.alert("Genre: Too Short")
+    }
+
+    var characters = /^[a-zA-Z\s]*$/;
+    if (!document.newMovie.newgenre.value.match(characters)) {
+      window.alert("Genre must contain alphabet characters only");
+      return false;
+    }
+    
+    if (document.newMovie.newgenre.value == "") {
+      window.alert("Genre: Empty Input");
+      return false;
+    }
+    if(((document.newMovie.newgenre.value).length) < 3 ) {
+      window.alert("Genre: Too Short")
+    }
+    if(document.newMovie.newprice.value == "") {
+      window.alert("Price: Empty Input");
+      return false;
+    }
+  }
+</script>
+<head>
+<body>
+<div id="title">
+<pre style="color:#ff0000" ><strong><h3><br><br><br><br><br><br>  ______               _          __  ___           _          
+ /_  __/___  ____ ___ ( )_____   /  |/  /___ _   __(_)__  _____
+  / / / __ \/ __ `__ \|// ___/  / /|_/ / __ \ | / / / _ \/ ___/
+ / / / /_/ / / / / / / (__  )  / /  / / /_/ / |/ / /  __(__  ) 
+/_/  \____/_/ /_/ /_/ /____/  /_/  /_/\____/|___/_/\___/____/  
+                                                               </h3></strong></pre>
+    </div>
+    <div id="buttons">
+        <button onclick="window.location.href='index.html'"; type="button" class="button" style="margin:3px" style="width:30px">
+         Home</button>
+        <button onclick="history.back()"; type="button" class="button" style="margin:3px" style="width:30px">
+         Back</button>
+    </div>
+    <div id="welcomemessage">
+    <pre style="color:#ff0000"><font face = ""><strong><h4>-=- Add a Movie -=- </h4></strong></font></pre>
+    </div>
+    <div id="form">
+    <FORM name="newMovie" action="addmovie.php" method="post" onsubmit="return validate()">
+      <label for="newmoviename">Movie Title</label>
+      <input type="text" id="newmoviename" name="newmoviename" placeholder="">
+       
+      <label for="newactorname">Actor Name</label>
+      <input type="text" id="newactorname" name="newactorname" placeholder="">
+
+      <label for="newyear">Year of Release</label>
+      <input type="text" id="newyear" name="newyear" placeholder="">
+                                                                             
+      <label for="newgenre">Genre</label>
+      <input type="text" id="newgenre" name="newgenre" placeholder="">
+                                                                     
+      <label for="newprice">Price</label>
+      <input type="text" id="newprice" name="newprice" placeholder="">
+
+      <input type="submit" value="Add">
+      </FORM>
+      </div>
+                                                                                     
+
+</body>
+</html>
